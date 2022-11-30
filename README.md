@@ -1,1 +1,1 @@
-# <h1>interface örnek kullanımı</h1>
+# <h1>patika java102 projelerim</h1>

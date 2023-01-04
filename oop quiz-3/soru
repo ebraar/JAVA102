@@ -1,0 +1,22 @@
+Quiz sorusunda bir akıllı telefon için fotoğraf çekme, video kaydetme, wi-fi ağlarını bulma ve internete bağlanma gibi temel adımları gerçekleştiren bir uygulama kodu yazılacaktır. 
+Uygulamada öncelikle Kamera ve Wifi isimli iki adet interface tanımlanacaktır. 
+
+Kamera arayüzü; EkranGoruntusuAl, PiliKontrolEt, VideoKaydet ve 4KVideoKaydet isimlerinde metotlara sahiptir. Bu metotlardan EkranGoruntusuAl ve VideoKaydet metotları gövdesiz metotlar iken 4KVideoKaydet ve PiliKontrolEt metotlarının gövdesi mevcuttur. 
+* void EkranGoruntusuAl() : ekrana ‘ekran görüntüsü alındı’ yazdırmaktadır
+* void VideoKaydet() : ekrana ‘video kaydediliyor’ yazdırmaktadır.
+* void 4KVideoKaydet() : ekrana ‘4K video kaydediliyor’ yazdırmaktadır.
+* boolean PiliKontrolEt(int deger) : kendisine parametre olarak gelen pil değerini ekrana basmaktadır. Ayrıca gelen pil değeri 20’den büyükse true, değilse false değeri döndürmektedir.
+
+Wifi arayüzü; AglariBul, AgaBaglan ve PiliKontrolEt metotlarına sahiptir. AglarıBul ve AgaBaglan metotları gövdesiz metotlar iken PiliKontrolEt metodu gövdeli bir metottur.
+* String[] AglariBul() : Ekrana ‘Wi-fi ağları listeleniyor’ yazdıracaktır. Ayrıca aktif ağların listesini geri döndürülecektir. Aktif ağ listesi {"Harry", "Prashanth", "Anjali5G"} şeklindedir.
+* void AgaBaglan(String agİsmi) : ekrana kendisine parametre olarak gelen ağın ismi ile ‘agİsmi bağlanılıyor.’ yazdırmaktadır.
+* boolean PiliKontrolEt(int deger) : kendisine parametre olarak gelen pil değerini ekrana basmaktadır. Ayrıca gelen pil değeri 10’den büyükse true, değilse false değeri döndürmektedir.
+
+CepTelefonu adında bir sınıf tanımlanacaktır. CepTelefonu sınıfı NumarayıAra ve CagriSec adında iki metoda sahiptir. 
+* void NumarayiAra(String telNumarasi) : ekrana kendine parametre olarak gelen telefon numarası ile ‘’telNumarasi aranıyor …’ yazdıracaktır.
+* void CagriSec() : ekrana ‘Baglanılıyor …’ yazdıracaktır.
+
+AkilliTelefon sınıfı tanımlanacaktır. AkilliTelefon sınıfı CepTelefonu sınıfından miras alacaktır. Ayrıca Kamera ve Wifi interfacelerini de implemente edecektir. Pil kontrolü için Kamera arayüzü tercih edilecektir.
+
+Main metodunda AkilliTelefon sınıfından 2 adet nesne türetilecektir. Birinci nesne için EkranGoruntusuAl, VideoKaydet, CagriSec metotları sırasıyla çağrılacaktır. Daha sonra pil değeri kontrol edilecek (pil değeri 15) ve pil değerinin true olması halinde wi-fi ağları listelenip her ağa sırasıyla bağlanılacaktır.
+İkinci nesne için 4KVideoKaydet ve NumarayiAra metotları sırasıyla çağrılacaktır (Telefon numarası “123456”). Daha sonra pil değeri kontrol edilecek (pil değeri 3) ve pil değerinin true olması halinde wi-fi ağları listelenecektir.
